@@ -1,0 +1,37 @@
+{
+  "name": "interbank-academy-25",
+  "version": "1.0.0",
+  "description": "## Objetivo:",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-transform-types --no-warnings ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serv10/interbank-academy-25.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/serv10/interbank-academy-25/issues"
+  },
+  "homepage": "https://github.com/serv10/interbank-academy-25#readme",
+  "dependencies": {
+    "csv-parser": "^3.2.0",
+    "decimal.js": "^10.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@typescript-eslint/eslint-plugin": "^8.29.1",
+    "@typescript-eslint/parser": "^8.29.1",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "prettier": "3.5.3",
+    "typescript-eslint": "^8.29.1"
+  }
+}
