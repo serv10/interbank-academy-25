@@ -13,11 +13,13 @@ export const leerArchivoCSV = (
 
   fs.createReadStream(rutaArchivoCSV)
     .pipe(csv()) // Usar la libreria csv-parser para leer el CSV
-    .on(
-      "data",
-      (data: Record<string, string>) =>
-        transacciones.push(transaccionMapper(data)), // La data obtenida se mapea a la interfaz Transaccion y se agrega al array
-    )
+    .on("data", (data: Record<string, string>) => {
+      const dataMappeada: Transaccion = transaccionMapper(data);
+
+      if (dataMappeada) {
+        return transacciones.push(dataMappeada); // La data obtenida se mapea a la interfaz Transaccion y se agrega al array
+      }
+    })
     .on("end", () => {
       callback(transacciones); // Llamar al callback con las transacciones procesadas
     })

@@ -8,9 +8,14 @@ import type {
 export const transaccionMapper = (
   data: Record<string, string>,
 ): Transaccion => {
-  return {
-    id: Number(data.id),
-    tipo: data.tipo.toLowerCase() as TipoTransaccion,
-    monto: new Decimal(data.monto),
-  };
+  try {
+    return {
+      id: Number(data.id),
+      tipo: data.tipo.toLowerCase() as TipoTransaccion,
+      monto: new Decimal(data.monto),
+    };
+  } catch (error) {
+    console.error("Error al mapear la transacción:", error.message);
+    return;
+  }
 };
